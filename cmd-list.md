@@ -1,42 +1,28 @@
-1. Create a new user named grader
+1. Create a new user named grader  
+    useradd grader  
+    passwd grader
 
-> useradd grader
+2. Give the grader the permission to sudo  
+    visudo  
+> Defaults timestamp_timeout=15  
+> grader ALL=(ALL:ALL) ALL
 
-> passwd grader
+* Set grader can connected by ssh  
+    cd /home/grader  
+    ssh-keygen  
+    cp id_rsa authorized_keys  
+    vi /etc/ssh/ssh_config  
+> AuthorizedKeysFile      %h/.ssh/authorized_keys  
+* disable root connection  
+> PermitRootLogin no
 
+3. Update all currently installed packages  
+    apt-get update
 
-2. Give the grader the permission to sudo
-> visudo
-
-  * Defaults timestamp_timeout=15
-  * grader ALL=(ALL:ALL) ALL
-
-* Set grader can connected by ssh
-
-> cd /home/grader
-
-> ssh-keygen
-
-> cp id_rsa authorized_keys
-
-> vi /etc/ssh/ssh_config
-  * AuthorizedKeysFile      %h/.ssh/authorized_keys
-
-* disable root connection
-  * PermitRootLogin no
-
-
-3. Update all currently installed packages
-
-> apt-get update
-
-
-4. Change the SSH port from 22 to 2200
-
-> netstat -tulpn |grep sshd
-> vi /etc/ssh/sshd_config
-> service ssh restart
-
+4. Change the SSH port from 22 to 2200  
+    netstat -tulpn |grep sshd  
+    vi /etc/ssh/sshd_config  
+    service ssh restart
 
 5. Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
 
