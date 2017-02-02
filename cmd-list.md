@@ -64,7 +64,7 @@ Create a new user named catalog that has limited permissions to your catalog app
 `apt-get install postgresql`  
 `apt-get install python-dev`  
 `apt-get install libpq-dev`  
-'sudo -u postgres createuser -D -A -P catalog`  
+`sudo -u postgres createuser -D -A -P catalog`  
 `sudo -u postgres createdb -O catalog catalog`  
 `/etc/init.d/postgresql restart`  
 `vi /etc/postgresql/9.3/main/pg_hba.conf`  
