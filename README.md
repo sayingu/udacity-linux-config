@@ -1,8 +1,8 @@
 1. The IP address and SSH port so your server can be accessed by the reviewer.
-  * 52.33.111.203 -p 2200
+  * 35.166.251.196 -p 2200
 
 2. The complete URL to your hosted web application.
-  * http://ec2-52-33-111-203.us-west-2.compute.amazonaws.com/
+  * http://ec2-35-166-251-196.us-west-2.compute.amazonaws.com/
 
 3. A summary of software you installed and configuration changes made.
   * apache2
