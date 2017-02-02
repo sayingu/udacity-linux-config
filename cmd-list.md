@@ -1,6 +1,6 @@
 1. Create a new user named grader  
-    useradd grader  
-    passwd grader
+`useradd grader`  
+`passwd grader`
 
 2. Give the grader the permission to sudo  
     visudo  
@@ -11,8 +11,8 @@
     cd /home/grader  
     ssh-keygen  
     cp id_rsa authorized_keys  
-    vi /etc/ssh/ssh_config  
-> AuthorizedKeysFile      %h/.ssh/authorized_keys  
+    `vi /etc/ssh/ssh_config`  
+> AuthorizedKeysFile %h/.ssh/authorized_keys  
 * disable root connection  
 > PermitRootLogin no
 
