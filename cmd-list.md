@@ -43,20 +43,22 @@
 `apt-get install apache2`  
 `apt-get install libapache2-mod-wsgi`  
 > check html http://ec2-35-166-251-196.us-west-2.compute.amazonaws.com/  
+
 'vi /etc/apache2/sites-enabled/000-default.conf'  
+
 > ServerName catalog  
 >   
-> WSGIScriptAlias / /var/www/udacity-catalog/catalog.wsgi
-<Directory /usr/share/git/udacity-catalog>
-    Order deny,allow
-    Allow from all
-</Directory>
-<Directory "^/.*/\.git/">
-    Order deny,allow
-    Deny from all
-</Directory>
+> WSGIScriptAlias / /var/www/udacity-catalog/catalog.wsgi  
+> <Directory /usr/share/git/udacity-catalog>  
+>     Order deny,allow  
+>     Allow from all  
+> </Directory>  
+> <Directory "^/.*/\.git/">  
+>     Order deny,allow  
+>     Deny from all  
+> </Directory>  
 
-> service apache2 restart
+`service apache2 restart`
 
 8. Install and configure PostgreSQL:
 Do not allow remote connections
